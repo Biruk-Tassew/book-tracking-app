@@ -14,15 +14,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
-    environment:
-      DATABASE_URL: "sqlite:///./test.db"  # Update this with your database connection URL
     depends_on:
-      - db
-  db:
-    image: postgres:latest
+      - sqlite-db
     environment:
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-      POSTGRES_DB: mydatabase
-    ports:
-      - "5432:5432"
+      - DATABASE_URL=sqlite:///.\backend\BookTracking.db  # Correct SQLite database URL
+
+  sqlite-db:
+    image: busybox
+    volumes:
+      - .\backend\BookTracking.db:\backend\BookTracking.db  # Corrected volume path with forward slashes
+    command: echo "SQLite database volume"

@@ -1,4 +1,3 @@
-// frontend/src/pages/index.tsx
 import React, { useState, useEffect } from 'react';
 import { getBooks, addBook, updateBookStatus, deleteBook } from '../services/bookServices';
 import BookTable from '../components/BookTable';

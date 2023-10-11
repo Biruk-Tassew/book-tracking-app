@@ -1,4 +1,3 @@
-// frontend/src/components/Notification.tsx
 import React from 'react';
 
 interface Props {

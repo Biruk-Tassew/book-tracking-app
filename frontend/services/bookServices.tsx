@@ -1,4 +1,3 @@
-// frontend/src/services/bookService.ts
 import api from './api';
 
 export const getBooks = async () => {

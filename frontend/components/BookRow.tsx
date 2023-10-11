@@ -1,4 +1,3 @@
-// frontend/src/components/BookRow.tsx
 import React from 'react';
 
 interface Props {

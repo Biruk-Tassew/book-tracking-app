@@ -44,7 +44,7 @@ async def update_book(book: Item, book_id):
     return {"message": "Book updated successfully"}
 
 @app.delete("/api/books/{book_id}")
-async def delete_book(book_id: int):
+async def delete_book(book_id):
     book = await book_repository.get_book_by_id(book_id)
     if not book:
         raise HTTPException(status_code=404, detail="Book not found")
